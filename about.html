@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tentang Kami - Yayasan Sunan Drajat</title>
+    <link rel="icon" href="Web-Images/logo-yayasan.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Global Styles */
+      :root {
+        --primary-color: #2c7865;
+        --secondary-color: #3d8361;
+        --accent-color: #d9edbf;
+        --light-color: #eef2e6;
+        --dark-color: #1c6758;
+        --text-color: #333;
+        --text-light: #777;
+        --white: #fff;
+        --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--light-color);
+        overflow-x: hidden;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 24px;
+        border-radius: 50px;
+        font-weight: 500;
+        text-align: center;
+        transition: var(--transition);
+        cursor: pointer;
+        border: none;
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        color: var(--white);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--dark-color);
+        transform: translateY(-3px);
+        box-shadow: var(--shadow);
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .section-header h2 {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-header h2::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--accent-color);
+      }
+
+      .section-header p {
+        color: var(--text-light);
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: var(--primary-color);
+        color: var(--white);
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+      }
+
+      nav a {
+        margin-left: 2rem;
+        font-weight: 500;
+        position: relative;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+      }
+
+      nav a i {
+        margin-right: 8px;
+      }
+
+      nav a:hover {
+        color: var(--accent-color);
+      }
+
+      nav a.active {
+        color: var(--accent-color);
+      }
+
+      nav a.active::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--accent-color);
+      }
+
+      .hamburger {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--white);
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      /* Hero Tentang Kami Section */
+      .hero-tentangkami {
+        padding: 8rem 0 4rem;
+        background-color: var(--white);
+      }
+
+      .hero-tentangkami .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .hero-text-tentangkami {
+        padding: 2rem 0;
+      }
+
+      .hero-text-tentangkami h2 {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        position: relative;
+      }
+
+      .hero-text-tentangkami h2::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 80px;
+        height: 3px;
+        background-color: var(--accent-color);
+      }
+
+      .hero-text-tentangkami p {
+        margin-bottom: 1.5rem;
+        text-align: justify;
+      }
+
+      .hero-text-tentangkami p span {
+        font-weight: 500;
+        color: var(--primary-color);
+      }
+
+      .hero-text-tentangkami p b {
+        color: var(--dark-color);
+      }
+
+      .hero-img-tentangkami {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .hero-img-tentangkami img {
+        width: 100%;
+        height: auto;
+        transition: var(--transition);
+      }
+
+      /* Daftar Kegiatan Section */
+      .box-daftar-kegiatan {
+        padding: 5rem 0;
+        background-color: var(--light-color);
+      }
+
+      .box-daftar-kegiatan .container {
+        max-width: 1200px;
+      }
+
+      .box-daftar-kegiatan-text h2 {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 2rem;
+        text-align: center;
+        position: relative;
+      }
+
+      .box-daftar-kegiatan-text h2::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--accent-color);
+      }
+
+      .list-daftar-kegiatan-baru {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .item-kegiatan {
+        background-color: var(--white);
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .item-kegiatan:hover {
+        transform: translateY(-5px);
+      }
+
+      .item-kegiatan h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+      }
+
+      .item-kegiatan p {
+        color: var(--text-light);
+        line-height: 1.7;
+      }
+
+      .tree {
+        padding: 30px;
+        background-color: var(
+          --light-color
+        ); /* Samakan dengan struktur-section */
+        padding-bottom: 5rem;
+      }
+
+      .tree-root {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+      }
+
+      .node {
+        background-color: var(--white);
+        border-radius: 35px;
+        padding: 1rem;
+        text-align: center;
+        margin: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        min-width: 220px;
+      }
+
+      .tree-branch {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+        position: relative;
+      }
+
+      .tree-branch::before {
+        content: "";
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 30px;
+        background-color: #ccc;
+      }
+
+      .tree-branch .node::before {
+        content: "";
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 30px;
+        background-color: #ccc;
+      }
+
+      .struktur-section {
+        padding: 4rem 0 1rem;
+        background-color: #e7f3ec; /* Warna soft hijau pastel */
+      }
+
+      /* Footer Styles */
+      .footer-main-page {
+        background-color: var(--dark-color);
+        color: var(--white);
+        text-align: center;
+        padding: 2rem 0;
+      }
+
+      .footer-main-page p {
+        margin: 0;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .hero-tentangkami .container {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-text-tentangkami {
+          order: 2;
+        }
+
+        .hero-img-tentangkami {
+          order: 1;
+          max-width: 600px;
+          margin: 0 auto;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hamburger {
+          display: block;
+          z-index: 1001;
+        }
+
+        nav {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 280px;
+          height: 100vh;
+          background-color: var(--dark-color);
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 6rem 2rem;
+          transition: var(--transition);
+          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        nav.show {
+          right: 0;
+        }
+
+        nav a {
+          margin: 1rem 0;
+          font-size: 1.1rem;
+          width: 100%;
+          padding: 0.8rem 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-text-tentangkami h2 {
+          font-size: 2rem;
+        }
+
+        .box-daftar-kegiatan-text h2 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .hero-tentangkami {
+          padding: 6rem 0 3rem;
+        }
+
+        .hero-text-tentangkami h2 {
+          font-size: 1.8rem;
+        }
+
+        .box-daftar-kegiatan-text h2 {
+          font-size: 1.8rem;
+        }
+
+        .list-daftar-kegiatan-baru {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <h2 class="nav-logo">Yayasan Sunan Drajat Semarang</h2>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <nav id="nav-menu">
+          <a href="index.html"><i class="fas fa-home"></i> Beranda</a>
+          <a href="about.html" class="active"
+            ><i class="fas fa-info-circle"></i> Tentang Kami</a
+          >
+          <a href="contact.html"
+            ><i class="fas fa-phone-alt"></i> Hubungi Kami</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero-tentangkami">
+      <div class="container">
+        <div class="hero-text-tentangkami">
+          <h2>Yayasan Sunan Drajat</h2>
+          <p>
+            Yayasan Sunan Drajat adalah panti sosial anak asuhan yang berlokasi
+            di Jalan Klipang Raya Golf RT 01/RW10, Plamongansari, Kecamatan
+            Pedurungan, Kota Semarang. Didirikan dengan tujuan untuk memberikan
+            perawatan, pendidikan, dan kesempatan bagi anak-anak yang kurang
+            beruntung. Yayasan ini menjadi tempat yang aman dan penuh kasih bagi
+            mereka yang membutuhkan.
+            <br /><br />
+            Melalui dukungan berbagai pihak, Yayasan Sunan Drajat berkomitmen
+            untuk membantu anak-anak tumbuh dan berkembang, serta meraih masa
+            depan yang lebih baik.
+            <br /><br />
+            <i><span>Allah Subhanu Wa Ta'ala berfirman:</span></i>
+            <br />
+            "Tahukah kamu (orang) yang mendustakan agama? Itulah orang yang
+            menghardik anak yatim, dan tidak menganjurkan memberi makan orang
+            miskin." <b>(QS. Al-Ma'un: 1–3)</b> <br /><br />
+            "Sesungguhnya zakat-zakat itu hanyalah untuk orang-orang fakir,
+            orang-orang miskin, pengurus-pengurus zakat, para mu'allaf yang
+            dibujuk hatinya, untuk (memerdekakan) hamba sahaya, orang-orang yang
+            berhutang, untuk jalan Allah, dan untuk mereka yang sedang dalam
+            perjalanan, sebagai suatu ketetapan yang diwajibkan Allah. Dan Allah
+            Maha Mengetahui, Maha Bijaksana." <b>(QS. At-Taubah: 60)</b>
+            <br /><br />
+            Tujuan pembangunan nasional adalah untuk mewujudkan suatu masyarakat
+            yang adil dan makmur yang merata, baik secara material maupun
+            spiritual, berdasarkan Pancasila dan UUD 1945.
+          </p>
+        </div>
+        <div class="hero-img-tentangkami">
+          <img src="Web-Images/foto-yayasan1.JPG" alt="Yayasan Sunan Drajat" />
+        </div>
+      </div>
+    </section>
+
+    <section class="box-daftar-kegiatan">
+      <div class="container">
+        <div class="box-daftar-kegiatan-text">
+          <h2>DAFTAR KEGIATAN</h2>
+          <div class="list-daftar-kegiatan-baru">
+            <div class="item-kegiatan">
+              <h3>TAHFIDZUL QUR'AN</h3>
+              <p>
+                Program intensif hafalan Al-Qur'an dengan pendampingan
+                ustadz/ustadzah, bertujuan membentuk karakter Qur'ani yang
+                memahami dan mengamalkan isi Al-Qur'an.
+              </p>
+            </div>
+            <div class="item-kegiatan">
+              <h3>PANTI SOSIAL ANAK ASUH</h3>
+              <p>
+                Pemberian tempat tinggal, kasih sayang, pendidikan, dan
+                pembinaan akhlak bagi anak-anak yatim dan kurang mampu.
+              </p>
+            </div>
+            <div class="item-kegiatan">
+              <h3>SANTUNAN DHUAFA'</h3>
+              <p>
+                Bantuan rutin berupa uang, sembako, atau kebutuhan pokok kepada
+                kaum dhuafa di sekitar yayasan.
+              </p>
+            </div>
+            <div class="item-kegiatan">
+              <h3>SEKOLAH FORMAL</h3>
+              <p>
+                Pendidikan formal dari SD hingga SMA bagi anak asuh dengan
+                dukungan biaya penuh dari yayasan.
+              </p>
+            </div>
+            <div class="item-kegiatan">
+              <h3>LAYANAN SOSIAL DAN KESEHATAN</h3>
+              <p>
+                Pelayanan kesehatan dasar dan bantuan darurat bagi anak-anak
+                serta masyarakat sekitar.
+              </p>
+            </div>
+            <div class="item-kegiatan">
+              <h3>PONDOK PESANTREN</h3>
+              <p>
+                Sistem pendidikan berbasis asrama dan keagamaan, fokus pada
+                pembinaan akhlak dan ilmu agama.
+              </p>
+            </div>
+            <div class="item-kegiatan">
+              <h3>MAJLIS TA'LIM</h3>
+              <p>
+                Pengajian rutin yang memperkuat iman dan menjadi ruang dakwah
+                serta silaturahmi.
+              </p>
+            </div>
+            <div class="item-kegiatan">
+              <h3>TPQ DAN MADRASAH</h3>
+              <p>
+                Pendidikan dini untuk mengenalkan huruf hijaiyah, membaca
+                Al-Qur'an, dan dasar-dasar akhlak Islam.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pengurus Yayasan Section -->
+    <section class="tree">
+      <div class="container">
+        <div class="section-header">
+          <h2>Struktur Pengurus Yayasan Sunan Drajat Semarang</h2>
+        </div>
+      </div>
+      <div class="tree-root">
+        <div class="node">
+          Ketua<br /><strong>M. Rivaldi Mufti Wibowo, S.M</strong>
+        </div>
+        <div class="tree-branch">
+          <div class="node">
+            Sekretaris<br /><strong>Muchamad Suryadi, S.M</strong>
+          </div>
+          <div class="node">
+            Bendahara<br /><strong>Novi Nur Cahyani, S.M, S.Q</strong>
+          </div>
+        </div>
+        <div class="tree-branch">
+          <div class="node">
+            Pembina<br /><strong>Muhammad Munasib, S.E., M.Si.</strong>
+          </div>
+          <div class="node">
+            Penasehat<br /><strong>Nur Faizah, S.Pd</strong>
+          </div>
+          <div class="node">Pengawas<br /><strong>Sobirin, S.Ag</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-main-page">
+      <div class="container">
+        <p>&copy; 2025 Yayasan Sunan Drajat Semarang</p>
+      </div>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        const navMenu = document.getElementById("nav-menu");
+        navMenu.classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>
